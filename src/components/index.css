@@ -1,0 +1,37 @@
+.nav-link {
+  font-weight: bold;
+  
+  color: white!important;
+  
+  
+}
+.rating {
+    color: gold;
+}
+
+.price {
+    font-size: 1.3rem;
+}
+
+.discount {
+    color: green;
+    font-size: 1.1rem;
+}
+
+.ship {
+    color: grey;
+}
+
+.add-button {
+    background-color: yellow !important;
+    border: none !important;
+    color: black !important;
+    font-weight: 700 !important;
+}
+
+.remove-button {
+    background-color: #f8d7da !important;
+    border: none !important;
+    color: #721c24 !important;
+    font-weight: 700 !important;
+}
