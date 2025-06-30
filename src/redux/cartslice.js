@@ -9,7 +9,7 @@ const initialState={
         reducers:{
             addcart:(state,action)=>
             {
-                if(!state.cartitem,include(action.payload))
+                if(!state.cartitem.includes(action.payload))
                 {
                     state.cartitem.push(action.payload)
                 }

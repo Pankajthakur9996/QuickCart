@@ -1,20 +1,23 @@
 import { addcart, removeCart } from "../redux/cartslice";
 import { useSelector, useDispatch } from "react-redux";
 import { Col, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const ProductCard = ({ item }) => {
   if (!item || !item.title) return null;
 
   const cartItem = useSelector((state) => state.cartData.cartitem);
+  console.log(cartItem)
   const dispatch = useDispatch();
 
   const isInCart = (id) => {
-    return cartItem.some((product) => product.id === id);
+    return cartItem.includes(id);
   };
 
   return (
     <Col md={4} className="fade-in mb-4">
-      <Card className="h-100">
+      <Card className="h-100"> 
+        <Link to={`/product-details/${item.id}`}>
         <Card.Img
           loading="lazy"
           className="img1"
@@ -22,6 +25,7 @@ export const ProductCard = ({ item }) => {
           src={item.thumbnail}
           alt="not found"
         />
+        </Link>
         <Card.Body>
           <Card.Title style={{ fontSize: "1.5rem" }} className="twoLine">
             {item.title} | {item.description}
@@ -67,6 +71,7 @@ export const ProductCard = ({ item }) => {
             Add to Cart
           </Button>
         )}
+       
       </Card>
     </Col>
   );
